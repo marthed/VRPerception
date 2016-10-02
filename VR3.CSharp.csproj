@@ -69,6 +69,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avcodec.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avdevice.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avfilter.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avformat.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avutil.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.swresample.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.swscale.g.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\Unresolved.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\MedaiPlayerSampleGUI.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\MedaiPlayerSampleSphereGUI.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\MediaPlayerFullScreenCtrl.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\SeekBarCtrl.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\SphereMirror.cs" />
+    <Compile Include="Assets\EasyMovieTexture\Scripts\VideoCopyTexture.cs" />
     <Compile Include="Assets\GoogleVR\DemoScenes\ControllerDemo\ControllerDebugInfo.cs" />
     <Compile Include="Assets\GoogleVR\DemoScenes\ControllerDemo\ControllerDemoManager.cs" />
     <Compile Include="Assets\GoogleVR\DemoScenes\HeadsetDemo\FPS.cs" />
@@ -111,40 +130,17 @@
     <Compile Include="Assets\GoogleVR\Scripts\UI\GvrReticle.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazePointer.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazeResponder.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avcodec.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avdevice.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avfilter.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avformat.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avutil.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.swresample.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.swscale.g.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\Properties\AssemblyInfo.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\Unresolved.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\FFmpeg.AutoGen\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\MedaiPlayerSampleGUI.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\MedaiPlayerSampleSphereGUI.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\MediaPlayerCtrl.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\MediaPlayerFullScreenCtrl.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\SeekBarCtrl.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\SphereMirror.cs" />
-    <Compile Include="Assets\Stuff\EasyMovieTexture\Scripts\VideoCopyTexture.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
+    <None Include="Assets\EasyMovieTexture\Chromakey2.shader" />
+    <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
+    <None Include="Assets\EasyMovieTexture\readme.txt" />
+    <None Include="Assets\EasyMovieTexture\readme_License.txt" />
     <None Include="Assets\GoogleVR\Distortion\GvrDistortion.cginc" />
     <None Include="Assets\GoogleVR\Legacy\Resources\SolidColor.shader" />
     <None Include="Assets\GoogleVR\Legacy\Resources\UnlitTexture.shader" />
     <None Include="Assets\GoogleVR\Resources\UI\GvrReticleShader.shader" />
-    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-    <None Include="Assets\Stuff\EasyMovieTexture\AndroidSource\EasyMovieTexture_JavaSource\AndroidManifest.xml" />
-    <None Include="Assets\Stuff\EasyMovieTexture\AndroidSource\EasyMovieTexture_JavaSource\lint.xml" />
-    <None Include="Assets\Stuff\EasyMovieTexture\AndroidSource\EasyMovieTexture_JavaSource\proguard-project.txt" />
-    <None Include="Assets\Stuff\EasyMovieTexture\Chromakey.shader" />
-    <None Include="Assets\Stuff\EasyMovieTexture\Chromakey2.shader" />
-    <None Include="Assets\Stuff\EasyMovieTexture\Unlit_SphereInside.shader" />
-    <None Include="Assets\Stuff\EasyMovieTexture\readme.txt" />
-    <None Include="Assets\Stuff\EasyMovieTexture\readme_License.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

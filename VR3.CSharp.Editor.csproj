@@ -115,19 +115,15 @@
     <Compile Include="Assets\GoogleVR\Legacy\Editor\StereoControllerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
+    <None Include="Assets\EasyMovieTexture\Chromakey2.shader" />
+    <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
+    <None Include="Assets\EasyMovieTexture\readme.txt" />
+    <None Include="Assets\EasyMovieTexture\readme_License.txt" />
     <None Include="Assets\GoogleVR\Distortion\GvrDistortion.cginc" />
     <None Include="Assets\GoogleVR\Legacy\Resources\SolidColor.shader" />
     <None Include="Assets\GoogleVR\Legacy\Resources\UnlitTexture.shader" />
     <None Include="Assets\GoogleVR\Resources\UI\GvrReticleShader.shader" />
-    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-    <None Include="Assets\Stuff\EasyMovieTexture\AndroidSource\EasyMovieTexture_JavaSource\AndroidManifest.xml" />
-    <None Include="Assets\Stuff\EasyMovieTexture\AndroidSource\EasyMovieTexture_JavaSource\lint.xml" />
-    <None Include="Assets\Stuff\EasyMovieTexture\AndroidSource\EasyMovieTexture_JavaSource\proguard-project.txt" />
-    <None Include="Assets\Stuff\EasyMovieTexture\Chromakey.shader" />
-    <None Include="Assets\Stuff\EasyMovieTexture\Chromakey2.shader" />
-    <None Include="Assets\Stuff\EasyMovieTexture\Unlit_SphereInside.shader" />
-    <None Include="Assets\Stuff\EasyMovieTexture\readme.txt" />
-    <None Include="Assets\Stuff\EasyMovieTexture\readme_License.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

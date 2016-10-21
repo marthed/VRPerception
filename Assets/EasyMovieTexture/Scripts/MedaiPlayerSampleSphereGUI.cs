@@ -4,13 +4,24 @@ using System.Collections;
 public class MedaiPlayerSampleSphereGUI : MonoBehaviour {
 	
 	public MediaPlayerCtrl scrMedia;
+	private PlayButton playButton;
+
+
 	// Use this for initialization
 	void Start () {
-	
+
+		scrMedia.Load ("Vienna.mp4");
+		Vector3 vector = new Vector3 (0.05f, 0, 2);
+		playButton = gameObject.AddComponent<PlayButton>(  ) as PlayButton;
+        playButton.LoadShit(vector, scrMedia);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+		playButton.CheckHeadPose ();
 		
 		foreach(Touch touch in Input.touches)
 		{
@@ -22,13 +33,13 @@ public class MedaiPlayerSampleSphereGUI : MonoBehaviour {
 
 	#if !UNITY_WEBGL
 
-	void OnGUI() {
-		
-	
-		if( GUI.Button(new Rect(50,50,200,200),"Load"))
+	/*void OnGUI() {
+
+
+        if( GUI.Button(new Rect(50,50,200,200),"Load"))
 		{
             Debug.Log("Load button pressed");
-            scrMedia.Load("EasyMovieTexture.mp4");
+            scrMedia.Load("Vienna.mp4");
             //Handheld.PlayFullScreenMovie("EasyMovieTexture.mp4");
             
 		}
@@ -37,8 +48,8 @@ public class MedaiPlayerSampleSphereGUI : MonoBehaviour {
 		{
 			scrMedia.Play();
 		}
-	 	
-		if( GUI.Button(new Rect(50,550,200,200),"stop"))
+
+        /*if( GUI.Button(new Rect(50,550,200,200),"stop"))
 		{
 			scrMedia.Stop();
 		}
@@ -52,8 +63,8 @@ public class MedaiPlayerSampleSphereGUI : MonoBehaviour {
 		{
 			scrMedia.UnLoad();
 		}
-		
 
-	}
-	#endif
-}
+
+	}*/
+#endif
+    }

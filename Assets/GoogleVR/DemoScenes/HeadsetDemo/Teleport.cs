@@ -18,7 +18,7 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class Teleport : MonoBehaviour, IGvrGazeResponder {
   private Vector3 startingPosition;
-
+	
   void Start() {
     startingPosition = transform.localPosition;
     SetGazedAt(false);
@@ -32,6 +32,7 @@ public class Teleport : MonoBehaviour, IGvrGazeResponder {
   }
 
   public void SetGazedAt(bool gazedAt) {
+		//Debug.Log ("teleport colorchange");
     GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.red;
   }
 

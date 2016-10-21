@@ -92,8 +92,14 @@ public class GvrHead : MonoBehaviour {
     }
   }
 
-  // Normally, update head pose now.
-  void LateUpdate() {
+  private float degreeToRadian(float angle)
+    {
+        return Mathf.PI * angle / 180f;
+    }
+
+
+    // Normally, update head pose now.
+    void LateUpdate() {
     UpdateHead();
   }
 
@@ -108,8 +114,22 @@ public class GvrHead : MonoBehaviour {
     if (trackRotation) {
       var rot = GvrViewer.Instance.HeadPose.Orientation;
       if (target == null) {
-        transform.localRotation = rot;
-      } else {
+                //transform.localRotation = rot;
+                var tmprot = rot;
+                Vector3 euler = rot.eulerAngles;
+                Debug.Log(euler.ToString());
+
+                euler.y = euler.y + 0 * (60 * Mathf.Sin(this.degreeToRadian(euler.y)));
+
+                tmprot = Quaternion.Euler(euler);
+
+                //Debug.Log(tmprot.ToString());
+                //transform.localRotation = Quaternion.Slerp(tmprot, Quaternion.Euler(Vector3.forward), 0.5f);
+                transform.localRotation = tmprot;
+
+    
+
+            } else {
         transform.rotation = target.rotation * rot;
       }
     }

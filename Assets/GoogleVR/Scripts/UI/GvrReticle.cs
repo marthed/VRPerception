@@ -54,11 +54,16 @@ public class GvrReticle : MonoBehaviour, IGvrGazePointer {
   private float reticleInnerDiameter = 0.0f;
   private float reticleOuterDiameter = 0.0f;
 
-  void Start () {
+  private MediaPlayerCtrl scrMedia;
+  int counter = 0;
+
+    void Start () {
     CreateReticleVertices();
 
     materialComp = gameObject.GetComponent<Renderer>().material;
-  }
+
+    scrMedia = GetComponentInParent<MedaiPlayerSampleSphereGUI>().scrMedia;
+    }
 
   void OnEnable() {
     GazeInputModule.gazePointer = this;
@@ -71,7 +76,16 @@ public class GvrReticle : MonoBehaviour, IGvrGazePointer {
   }
 
   void Update() {
-    UpdateDiameters();
+        counter += 1;
+
+        if (scrMedia.GetCurrentState() == MediaPlayerCtrl.MEDIAPLAYER_STATE.PLAYING && counter > 2)
+        {
+            
+            Color oldColor = materialComp.color;
+            Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, 0.0f);
+            materialComp.SetColor("_Color", newColor);
+        }
+        UpdateDiameters();
   }
 
   /// This is called when the 'BaseInputModule' system should be enabled.

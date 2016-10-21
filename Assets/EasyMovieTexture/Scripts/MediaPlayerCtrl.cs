@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine.UI;
 #if !UNITY_WEBPLAYER && !UNITY_WEBGL && !UNITY_WP8 && !UNITY_WP8_1
 using FFmpeg.AutoGen;
@@ -42,10 +43,12 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     public Text inLoadFileName; // When inside the load function. What is the filename
     public Text stateInLoad; // When inside the load function. What is the state
-    public Text whatURL;
-
     
+    public Text hej;
 
+    public static string WRITE_FILE = "";
+
+	public bool log = false;
 
     public bool m_bFullScreen = false;//Please use only in FullScreen prefab.
     public bool m_bSupportRockchip = true; //Using a device support Rochchip or Low-end devices
@@ -334,8 +337,35 @@ public class MediaPlayerCtrl : MonoBehaviour
         }
     }
 
+    public void CreateFile() 
+    {
+
+        DateTime dat1 = new DateTime();
+        dat1 = DateTime.Now;
+        
+		WRITE_FILE = Application.persistentDataPath + "/PhysicalCord" + dat1.ToString("yyyyMMddHHmmss") + ".txt";
+		File.WriteAllText(WRITE_FILE, "x;y;time" + "\n");
+        
+    }
+
     void Update()
     {
+		//hej.text = GvrViewer.Instance.HeadPose.Orientation.eulerAngles.x.ToString() + "   " + GvrViewer.Instance.HeadPose.Orientation.eulerAngles.y.ToString();
+		if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING) {
+
+            
+
+			float x = GvrViewer.Instance.HeadPose.Orientation.eulerAngles.x;
+			float y = GvrViewer.Instance.HeadPose.Orientation.eulerAngles.y;
+            
+            hej.text = x.ToString() + "   " + y.ToString();
+
+			DateTime dat1 = new DateTime();
+			dat1 = DateTime.Now;
+
+			File.AppendAllText(WRITE_FILE, x + ";" + y + ";" + dat1.ToString() + "\n");
+            
+		}
 
         this.stateTEXT.text = GetCurrentState().ToString(); // Print the current state
 
@@ -356,7 +386,7 @@ public class MediaPlayerCtrl : MonoBehaviour
 
             string strName = m_strFileName.Trim();
 
-            this.whatURL.text = strName; // What is the name of the file
+             // What is the name of the file
 
 #if UNITY_IPHONE  || UNITY_TVOS
 			/*if (strName.StartsWith("http",StringComparison.OrdinalIgnoreCase))
@@ -822,6 +852,8 @@ public class MediaPlayerCtrl : MonoBehaviour
 
     public void Play()
     {
+        CreateFile();
+		log = true;
         if (m_bStop == true)
         {
 			SeekTo(0);
@@ -843,7 +875,8 @@ public class MediaPlayerCtrl : MonoBehaviour
     {
         if (m_CurrentState == MEDIAPLAYER_STATE.PLAYING)
             Call_Pause();
-
+		Debug.Log ("HEJ");
+		log = false;
 
         m_bStop = true;
         m_CurrentState = MEDIAPLAYER_STATE.STOPPED;
@@ -875,7 +908,9 @@ public class MediaPlayerCtrl : MonoBehaviour
 
         m_strFileName = strFileName;
 
-        this.inLoadFileName.text = m_strFileName;
+        string path = Application.persistentDataPath;
+
+        this.inLoadFileName.text = path;
         this.stateInLoad.text = "State in load is" + GetCurrentState().ToString();
 
         if (m_bInit == false)
